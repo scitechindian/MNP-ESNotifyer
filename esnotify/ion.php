@@ -132,13 +132,13 @@ class coin
 					$mnl['post']['script']['params']['status']      = $data['status'];
 					$mnl['post']['script']['params']['lastchecked'] = $data['lastchecked'];
 					$mnl['post']['upsert']                          = $data;
+					$MNLBulk[] = $mnl;
 				}
 				if ($data['status'] === 'ENABLED') {
 					$enabled++;
 				} else {
 					$other++;
 				}
-				$MNLBulk[] = $mnl;
 			}
 		}
 		if (substr($getInfo['blocks'], -1) === '5' || substr($getInfo['blocks'], -1) === '0') {

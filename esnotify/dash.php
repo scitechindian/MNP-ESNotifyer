@@ -126,19 +126,19 @@ class coin
 						$mnlData['country_name'] = $mnData['ipData']['country_name'];
 						$fullMNLList[]           = $mnlData;
 					}
+					$mnl['config']                                  = $config;
+					$mnl['post']['script']['inline']                = 'ctx._source.status = params.status; ctx._source.lastchecked = params.lastchecked';
+					$mnl['post']['script']['lang']                  = 'painless';
+					$mnl['post']['script']['params']['status']      = $data['status'];
+					$mnl['post']['script']['params']['lastchecked'] = $data['lastchecked'];
+					$mnl['post']['upsert']                          = $data;
+					$MNLBulk[]                                      = $mnl;
 				}
-				$mnl['config']                                  = $config;
-				$mnl['post']['script']['inline']                = 'ctx._source.status = params.status; ctx._source.lastchecked = params.lastchecked';
-				$mnl['post']['script']['lang']                  = 'painless';
-				$mnl['post']['script']['params']['status']      = $data['status'];
-				$mnl['post']['script']['params']['lastchecked'] = $data['lastchecked'];
-				$mnl['post']['upsert']                          = $data;
 				if ($data['status'] === 'ENABLED') {
 					$enabled++;
 				} else {
 					$other++;
 				}
-				$MNLBulk[] = $mnl;
 			}
 		}
 		if (substr($getInfo['blocks'], -1) === '5' || substr($getInfo['blocks'], -1) === '0') {
@@ -182,7 +182,6 @@ class coin
 		$data['sortlist'] = $sortlist;
 		return $data;
 	}
-
 
 	public function mnldata($key, $value)
 	{

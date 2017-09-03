@@ -47,7 +47,7 @@ class coin
 	{
 		$ret['height']                     = 20000000;
 		$ret['reward']                     = 9;
-		$ret['nextreward']                 = "N/A";
+		$ret['nextreward']                 = 9;
 		$ret['currentHeight']              = $height;
 		$ret['masterNodeReward']           = $ret['reward'] / (100 / $this->coinData['masterNodeRewardPercent']);
 		$ret['stakeReward']                = $ret['reward'] - $ret['masterNodeReward'];
@@ -110,7 +110,7 @@ class coin
 					$mnl['post']['script']['params']['status']      = $data['status'];
 					$mnl['post']['script']['params']['lastchecked'] = $data['lastchecked'];
 					$mnl['post']['upsert']                          = $data;
-					$MNLBulk[] = $mnl;
+					$MNLBulk[]                                      = $mnl;
 				}
 				if ($data['status'] === 'ENABLED') {
 					$enabled++;
