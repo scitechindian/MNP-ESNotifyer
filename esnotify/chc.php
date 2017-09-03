@@ -169,9 +169,9 @@ class coin
 		$data['lastchecked']  = time();
 		$data['total']        = 0;
 		$data['transactions'] = [];
-		$splita               = explode(":", ltrim(rtrim($split[7])));
+		$splita               = explode(":", ltrim(rtrim($key)));
 		if (count($splita) > 2) {
-			$splita         = explode("]:", $split[7]);
+			$splita         = explode("]:", $key);
 			$data['iptype'] = 'ipv6';
 			$data['ip']     = str_replace("]", "", str_replace("[", "", $splita[0]));
 			$data['port']   = $splita[1];
