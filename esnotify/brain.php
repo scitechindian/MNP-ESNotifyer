@@ -22,7 +22,7 @@ class coin
 		$cData['coin']                      = $this->coin;
 		$cData['masterNodeRewardPercent']   = 70;
 		$cData['masterNodeCoinRequired']    = 100000;
-		$cData['walletCLI']                 = 'chaincoind';
+		$cData['walletCLI']                 = 'brain-cli';
 		$cData['logo']                      = 'https://files.coinmarketcap.com/static/img/coins/128x128/braincoin.png';
 		$cData['createAMasterNodeURL']      = 'http://www.chaincoin.org/';
 		$cData['createAMasterNodeURLTitle'] = 'chaincoin.org';
