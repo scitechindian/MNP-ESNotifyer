@@ -58,7 +58,7 @@ if (isset($wallet)) {
 		try {
 			$masternodelist = $coin->masternodelist($wallet, $es);
 			echo "MasterNodes Check COUNT: " . count($masternodelist) . "\r\n";
-			$coin->MNLParse($masternodelist, $argv, $es);
+			$coin->MNLParse($masternodelist, $argv, $es, $getInfo);
 		}
 		catch (Exception $e) {
 		}
