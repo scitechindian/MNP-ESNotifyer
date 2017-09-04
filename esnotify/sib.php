@@ -23,12 +23,12 @@ class coin
 		$cData['masterNodeRewardPercent']   = 50;
 		$cData['masterNodeCoinRequired']    = 1000;
 		$cData['walletCLI']                 = 'sibcoin-cli';
-		$cData['logo']                      = 'https://files.coinmarketcap.com/static/img/coins/32x32/sibcoin.png';
+		$cData['logo']                      = 'https://files.coinmarketcap.com/static/img/coins/128x128/sibcoin.png';
 		$cData['createAMasterNodeURL']      = 'http://sibcoin.org/';
 		$cData['createAMasterNodeURLTitle'] = 'sibcoin.org';
-		$cData['donate']                    = "SghaDHTRnMe4ky5envYT5eVmPr8GEWduZk";
+		$cData['donate']                    = 'SghaDHTRnMe4ky5envYT5eVmPr8GEWduZk';
 		$cData['blockSeconds']              = 155;
-		$cData['google']                    = "UA-102283949-14";
+		$cData['google']                    = 0;
 
 		$this->coinData = $cData;
 	}
