@@ -23,7 +23,7 @@ class coin
 		$cData['masterNodeRewardPercent']   = 25;
 		$cData['masterNodeCoinRequired']    = 1000;
 		$cData['walletCLI']                 = 'chaincoind';
-		$cData['logo']                      = 'https://files.coinmarketcap.com/static/img/coins/32x32/chaincoin.png';
+		$cData['logo']                      = '//masternodes.pro/img/chclogo.png';
 		$cData['createAMasterNodeURL']      = 'http://www.chaincoin.org/';
 		$cData['createAMasterNodeURLTitle'] = 'chaincoin.org';
 		$cData['donate']                    = "CVZXfffMPTPFnUBAeVVWGHFhzEwmK6JrKs";

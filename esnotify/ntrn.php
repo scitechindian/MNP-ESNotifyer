@@ -28,7 +28,7 @@ class coin
 		$cData['createAMasterNodeURLTitle'] = 'neutroncoin.com';
 		$cData['donate']                    = "9cYbQakkndSYh216DVSboPBRDvidQ8zQFx";
 		$cData['blockSeconds']              = 79;
-		$cData['google']                    = 'UA-102283949-4';
+		$cData['google']                    = 0;
 
 		$this->coinData = $cData;
 	}

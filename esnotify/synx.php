@@ -28,7 +28,7 @@ class coin
 		$cData['createAMasterNodeURLTitle'] = 'syndicatelabs.io';
 		$cData['donate']                    = "SZAFFAxzToGtjbUnDxkT1mG8fjC234jghV";
 		$cData['blockSeconds']              = 60;
-		$cData['google']                    = "UA-102283949-9";
+		$cData['google']                    = 0;
 
 		$this->coinData = $cData;
 	}

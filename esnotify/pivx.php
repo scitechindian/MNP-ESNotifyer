@@ -22,8 +22,8 @@ class coin
 		$cData['coin']                      = $this->coin;
 		$cData['masterNodeRewardPercent']   = 50;
 		$cData['masterNodeCoinRequired']    = 10000;
-		$cData['walletCLI']                 = 'exclusivecoind';
-		$cData['logo']                      = 'https://files.coinmarketcap.com/static/img/coins/128x128/exclusivecoin.png';
+		$cData['walletCLI']                 = 'pivx-cli';
+		$cData['logo']                      = 'https://files.coinmarketcap.com/static/img/coins/128x128/pivx.png';
 		$cData['createAMasterNodeURL']      = 'http://pivxmasternode.org';
 		$cData['createAMasterNodeURLTitle'] = 'pivxmasternode.org';
 		$cData['donate']                    = "DSdspoXG1Z6UuMxk1U23mtr4c7ht46RmWF";
@@ -64,7 +64,7 @@ class coin
 
 	public function masternodelist($wallet)
 	{
-		return $wallet->masternodelist('full');
+		return $wallet->masternodelist();
 	}
 
 	public function MNLParse($array, $argv, $es, $getInfo)
@@ -163,15 +163,16 @@ class coin
 
 	public function mnldata($key, $value)
 	{
-		$split                = explode(" ", ltrim(rtrim(trim(preg_replace('/\s\s+/', ' ', str_replace("\n", " ", $value))))));
-		$data['status']       = $split[0];
-		$data['addr']         = $split[2];
+//		echo json_encode($value, JSON_PRETTY_PRINT);
+//		$split                = explode(" ", ltrim(rtrim(trim(preg_replace('/\s\s+/', ' ', str_replace("\n", " ", $value))))));
+		$data['status']       = $value['status'];
+		$data['addr']         = $value['addr'];
 		$data['lastchecked']  = time();
 		$data['total']        = 0;
 		$data['transactions'] = [];
-		$splita               = explode(":", ltrim(rtrim($split[3])));
+		$splita               = explode(":", ltrim(rtrim($value['ip:port'])));
 		if (count($splita) > 2) {
-			$splita         = explode("]:", $split[3]);
+			$splita         = explode("]:", $value['ip:port']);
 			$data['iptype'] = 'ipv6';
 			$data['ip']     = str_replace("]", "", str_replace("[", "", $splita[0]));
 			$data['port']   = $splita[1];
@@ -226,7 +227,7 @@ class coin
 		foreach ($process as $voutKey => $vout) {
 			if (isset($vout['scriptPubKey']['type']) && $vout['scriptPubKey']['type'] === 'nonstandard') {
 				$mint      = true;
-				$mintTotal = $mainProcess['mint']; // NOTE: Not Always True
+//				$mintTotal = $mainProcess['mint']; // NOTE: Not Always True
 			}
 			if (isset($vout['scriptPubKey']['addresses'])) {
 				$vOutUpdate         = $txids = [];
