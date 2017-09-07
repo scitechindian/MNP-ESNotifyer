@@ -20,7 +20,7 @@ class coin
 		$this->password                     = $data['password'];
 		$this->stats                        = new CoinStats();
 		$cData['coin']                      = $this->coin;
-		$cData['masterNodeRewardPercent']   = 75;
+		$cData['masterNodeRewardPercent']   = 80;
 		$cData['masterNodeCoinRequired']    = 25000;
 		$cData['walletCLI']                 = 'bitsend-cli';
 		$cData['logo']                      = 'https://files.coinmarketcap.com/static/img/coins/128x128/bitsend.png';
