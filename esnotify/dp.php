@@ -46,7 +46,7 @@ class coin
 	{
 		if ($height <= 32000) {
 			$ret['height']     = 1;
-			$ret['reward']     = 20;
+			$ret['reward']     = 25;
 			$ret['nextreward'] = 2;
 		} else {
 			$ret['height']     = 32001;
