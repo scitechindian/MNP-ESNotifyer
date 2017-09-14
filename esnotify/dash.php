@@ -45,31 +45,9 @@ class coin
 
 	private function reward($height)
 	{
-		if ($height <= 125146) {
-			$ret['height']     = 125146;
-			$ret['reward']     = 23;
-			$ret['nextreward'] = 17;
-		} elseif ($height <= 568622) {
-			$ret['height']     = 568622;
-			$ret['reward']     = 17;
-			$ret['nextreward'] = 11.5;
-		} elseif ($height <= 1012098) {
-			$ret['height']     = 1012098;
-			$ret['reward']     = 11.5;
-			$ret['nextreward'] = 5.75;
-		} elseif ($height <= 1455574) {
-			$ret['height']     = 1455574;
-			$ret['reward']     = 5.75;
-			$ret['nextreward'] = 1.85;
-		} elseif ($height <= 3675950) {
-			$ret['height']     = 3675950;
-			$ret['reward']     = 1.85;
-			$ret['nextreward'] = 0.2;
-		} else {
-			$ret['height']     = 20000000;
-			$ret['reward']     = 0.2;
-			$ret['nextreward'] = "N/A";
-		}
+		$ret['height']                     = 20000000;
+		$ret['reward']                     = 3.60;
+		$ret['nextreward']                 = 3.60;
 		$ret['currentHeight']              = $height;
 		$ret['masterNodeReward']           = $ret['reward'] / (100 / $this->coinData['masterNodeRewardPercent']);
 		$ret['stakeReward']                = $ret['reward'] - $ret['masterNodeReward'];
