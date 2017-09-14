@@ -165,6 +165,9 @@ class coin
 	{
 		$split                = explode(" ", ltrim(rtrim(trim(preg_replace('/\s\s+/', ' ', str_replace("\n", " ", $value))))));
 		$data['status']       = $split[0];
+		if ($split[0] === "NEW_START_REQUIRED") {
+			$data['status']       = "ENABLED";
+		}
 		$data['addr']         = $split[2];
 		$data['lastchecked']  = time();
 		$data['total']        = 0;
