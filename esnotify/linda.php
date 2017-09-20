@@ -20,7 +20,7 @@ class coin
 		$this->password                     = $data['password'];
 		$this->stats                        = new CoinStats();
 		$cData['coin']                      = $this->coin;
-		$cData['masterNodeRewardPercent']   = 50;
+		$cData['masterNodeRewardPercent']   = 25;
 		$cData['masterNodeCoinRequired']    = 30000000;
 		$cData['walletCLI']                 = 'Lindad';
 		$cData['logo']                      = 'https://files.coinmarketcap.com/static/img/coins/128x128/linda.png';
